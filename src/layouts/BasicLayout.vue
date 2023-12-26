@@ -8,7 +8,7 @@
         >
             <div class="sider">
                 <header class="header">
-                    <img class="logo" src="@/assets/logo.png" />
+                    <img class="logo" src="@/assets/logo.svg" />
                     <span v-if="!collapsed" class="title">
                         {{ $t('title') }}
                     </span>
@@ -50,7 +50,7 @@
                     <router-view />
                 </a-layout-content>
                 <a-layout-footer>
-                    <GlobalFooter />
+                    <!-- <GlobalFooter /> -->
                 </a-layout-footer>
             </a-layout>
         </a-layout-content>
@@ -59,24 +59,18 @@
 
 <script lang="ts">
 import { computed, defineComponent, reactive, ref } from 'vue';
-// import { useStore } from "vuex";
 import SideMenu from '@/components/SideMenu/index.vue';
 import RightContent from '@/components/GlobalHeader/RightContent.vue';
-import { RouteRecordRaw } from 'vue-router';
-import GlobalFooter from '@/components/GlobalFooter/index.vue';
-// import { Route } from "@/types/route.d";
 import { MenuFoldOutlined } from '@ant-design/icons-vue';
 import { i18nRender } from '@/locales';
 import routes from '@/router/routes';
 import type { Route } from '@/router/types';
 import { useAppStore } from '@/store/app';
-// import { useRoute } from 'vue-router';
 
 export default defineComponent({
     components: {
         SideMenu,
         RightContent,
-        GlobalFooter,
         MenuFoldOutlined,
     },
     setup() {

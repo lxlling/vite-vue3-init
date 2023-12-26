@@ -1,5 +1,5 @@
-// import BasicLayout from './BasicLayout.vue';
+import BasicLayout from './BasicLayout.vue';
 import RouteView from './RouteView.vue';
 import EmptyLayout from './EmptyLayout.vue';
 
-export { RouteView, EmptyLayout };
+export { BasicLayout, RouteView, EmptyLayout };
