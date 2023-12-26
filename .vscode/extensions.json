@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "vue.volar",
+    "dbaeumer.vscode-eslint",
+    "wix.vscode-import-cost",
+    "esbenp.prettier-vscode",
+    "garaioag.garaio-vscode-unwanted-recommendations",
+    "stylelint.vscode-stylelint",
+    "lokalise.i18n-ally"
+  ],
+  "unwantedRecommendations": [
+    "vscode.typescript-language-features",
+    "octref.vetur",
+    "vue.vscode-typescript-vue-plugin"
+  ]
+}

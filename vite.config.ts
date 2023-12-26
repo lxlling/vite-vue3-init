@@ -1,10 +1,35 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
 import { resolve } from 'path';
+import Components from 'unplugin-vue-components/vite';
+import {
+  AntDesignVueResolver
+} from 'unplugin-vue-components/resolvers';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), vueJsx(), Components({
+    resolvers: [AntDesignVueResolver({       // 新的配置
+      importStyle: "less"
+    })],
+  })],
+  css: {
+    preprocessorOptions: {
+      less: {
+        modifyVars: {
+          'ant-prefix': 'ant',
+          'primary-color': '#3471FF',
+          'border-radius-base': '4px',
+          'error-color': '#FF4A47',
+        },
+        javascriptEnabled: true
+      },
+      // scss: {
+      //   additionalData: '@import "@/assets/styles/variables.module.scss";',
+      // }
+    },
+  },
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src') // 设置 `@` 指向 `src` 目录
@@ -26,4 +51,4 @@ export default defineConfig({
     //   }
     // }
   }
-})
+});

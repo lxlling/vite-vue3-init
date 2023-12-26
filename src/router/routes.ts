@@ -1,10 +1,10 @@
-import { RouteView, EmptyLayout } from '@/layouts';
+import { RouteView, EmptyLayout, BasicLayout } from '@/layouts';
 import type { Route } from './types';
 
 const routes: Route[] = [
     {
         path: '/',
-        component: EmptyLayout,//window.__POWERED_BY_QIANKUN__ ? EmptyLayout : BasicLayout,
+        component: BasicLayout,
         redirect: '/home',
         meta: {
             title: 'home',
@@ -23,10 +23,7 @@ const routes: Route[] = [
                     {
                         path: '/home',
                         name: 'Home',
-                        component: () =>
-                            import(
-                                '../views/home.vue'
-                            ),
+                        component: () => import('../views/home.vue'),
                         meta: {
                             title: 'home',
                             icon: 'home-outlined',
