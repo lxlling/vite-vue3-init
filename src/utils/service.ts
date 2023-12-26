@@ -70,13 +70,7 @@ service.interceptors.response.use(
         } else {
             // 默认只返回data，不返回状态码和message
             // 通过 meta 中的 responseAll 配置来取决后台是否返回所有数据(包括状态码，message和data)
-            const isbackAll =
-                response.config.meta && response.config.meta.responseAll;
-            if (isbackAll) {
-                return res;
-            } else {
-                return res.data;
-            }
+            return res.data;
         }
     },
     (error) => {

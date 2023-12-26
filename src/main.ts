@@ -7,7 +7,7 @@ import 'ant-design-vue/dist/antd.less';
 import i18n from '@/locales';
 import App from './App.vue';
 
-let router: Router = createRouter('');
+const router: Router = createRouter(import.meta.env.VITE_APP_NAME);
 const app = createApp(App);
 app.use(pinia).use(router).use(Antd).use(i18n);
 
